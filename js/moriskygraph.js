@@ -68,10 +68,17 @@ function QuestionView (question, xOffset, yOffset, radius) {
 
   self.init = function () {
     self.question = question;
-    self.textLabel = question.answer;
     self.xOffset = xOffset + radius;
     self.yOffset = yOffset + radius;
     self.radius = radius;
+  };
+
+  self.textLabel = function () {
+    if (self.question.answer === 1) {
+      return "Si";
+    } else {
+      return "No";
+    }
   };
 
   self.color = function () {
@@ -100,7 +107,7 @@ function QuestionView (question, xOffset, yOffset, radius) {
       'fill-opacity': self.opacity()
     });
 
-    label = paper.text(self.xOffset, self.yOffset, self.textLabel);
+    label = paper.text(self.xOffset, self.yOffset, self.textLabel());
     label.attr({
       'fill':         '#ffffff',
       'font-size':    32,
