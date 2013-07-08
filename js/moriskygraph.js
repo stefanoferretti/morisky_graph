@@ -347,7 +347,7 @@ function MoriskyGraph (domID, width, height, chartData) {
     });
 
     yLabelOffset = (self.quizViewHeight() / self.yLabelsNumber) / 2;
-    label = self.paper.text(xLabelOffset, yLabelOffset, "Totale");
+    label = self.paper.text(xLabelOffset, yLabelOffset, "Punteggio Totale");
     label.attr({
       'fill':         '#333333',
       'font-size':    32,
