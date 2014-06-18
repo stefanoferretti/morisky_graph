@@ -24,10 +24,10 @@ function TotalView (total, xOffset, yOffset, side, cornerRadius) {
   self.draw = function (paper) {
     var dot, label;
 
-    dot = paper.rect(self.xOffset, self.yOffset, self.side, self.side, self.cornerRadius    );
+    dot = paper.rect(self.xOffset, self.yOffset, self.side, self.side, self.cornerRadius);
     dot.attr({
       'stroke-width': 0,
-      'fill':         self.color(),
+      'fill': self.color(),
       'fill-opacity': 1
     });
 
@@ -54,7 +54,6 @@ function Question (description, questionNumber, answer) {
     self.questionNumber = questionNumber;
     self.answer = answer;
   };
-
 
   self.init();
 }
@@ -109,8 +108,8 @@ function QuestionView (question, xOffset, yOffset, radius) {
 
     label = paper.text(self.xOffset, self.yOffset, self.textLabel());
     label.attr({
-      'fill':         '#ffffff',
-      'font-size':    32,
+      'fill': '#ffffff',
+      'font-size': 32,
       'font-family':  "'League Gothic', 'Futura-CondensedMedium', 'Gill SansMT Condensed', 'Arial Narrow', 'sans-serif'"
     });
   };
@@ -179,8 +178,8 @@ function QuizView (quiz, xOffset, yOffset, width, height) {
     var date = self.quiz.date,
         d    = date.getDate(),
         m    = date.getMonth() + 1,
-        y    = date.getFullYear();
-    return (d <= 9 ? '0' + d : d) + "/" + (m <= 9 ? '0' + m : m) + "/" + date.getFullYear();
+        y    = date.getYear() - 100;
+    return (d <= 9 ? '0' + d : d) + "/" + (m <= 9 ? '0' + m : m) + "/" + y;
   };
 
   self.drawQuestions = function(paper) {
